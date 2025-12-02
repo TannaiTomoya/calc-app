@@ -17,14 +17,12 @@ $result = computed(function () {
     }
 
     $symbol = $operators[$this->operator];
-    
-    $value = match($this->operator) {
+
+    $value = match ($this->operator) {
         'addition' => $this->num1 + $this->num2,
         'subtraction' => $this->num1 - $this->num2,
         'multiplication' => $this->num1 * $this->num2,
-        'division' => $this->num2 != 0 
-            ? $this->num1 / $this->num2 
-            : 'エラー（0除算）',
+        'division' => $this->num2 != 0 ? $this->num1 / $this->num2 : 'エラー（0除算）',
         default => null,
     };
 
@@ -33,8 +31,7 @@ $result = computed(function () {
 
 ?>
 
-<div>
-    <h1>計算結果</h1>
-    <p>{{ $this->result }}</p>
+<div class="p-8">
+    <h1 class="text-5xl font-bold mb-6">計算結果</h1>
+    <p class="text-3xl">{{ $this->result }}</p>
 </div>
-
